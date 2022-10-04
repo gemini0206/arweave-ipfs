@@ -150,6 +150,7 @@ export default class ArweaveIpfs {
     );
     transaction.addTag(IPFS_KEY, h);
     transaction.addTag(IPFS_CONSTRAINT_KEY, IPFS_CONSTRAINT);
+    transaction.addTag("Content-Type", "image/png");
 
     //fast blocks hack
     const anchor_id = (await this.arweave.api.get("/tx_anchor")).data;
